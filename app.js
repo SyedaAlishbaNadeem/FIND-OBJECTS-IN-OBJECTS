@@ -99,12 +99,29 @@ function searchVal(){
   let res =  mobiles[mobileName.value][model.value] ;
   console.log(res);
 
+  let para = document.getElementById('getValue');
   //get values only
-  document.getElementById("getValue").innerHTML = Object.values(res);
+//   document.getElementById("getValue").innerHTML = Object.values(res);
 
   //get the whole string with value and variable
-  document.getElementById("getValue").innerHTML = JSON.stringify(res);
+//   document.getElementById("getValue").innerHTML = JSON.stringify(res);
+
+let a = Object.keys(res);
+let b = Object.values(res);
+para.innerHTML = "";
   
+for (let i = 0; i < a.length; i++) {
+    para.innerHTML += ` 
+    <h5 class="bg-light">
+      <span> ${a[i]}</span> : ${b[i]}
+    </h5>
+       `  
+}
+
+
+
+
+
 };
 
 
